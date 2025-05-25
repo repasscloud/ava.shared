@@ -20,7 +20,9 @@ jobs:
         dotnet-version: 9.0.x
     - name: Restore dependencies
       run: dotnet restore
+      working-directory: Ava.Shared
     - name: Build
       run: dotnet build --no-restore
+      working-directory: Ava.Shared
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ava.shared:$(date +%s)
+      run: docker build . --file Ava.Shared/Dockerfile --tag ava.shared:$(date +%s)
