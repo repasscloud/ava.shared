@@ -3,6 +3,7 @@ using System;
 using Ava.Shared.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Ava.Shared.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250602063519_addVersionInfoTable")]
+    partial class addVersionInfoTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -751,10 +754,6 @@ namespace Ava.Shared.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("ClientVersion")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Env")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("Updated")

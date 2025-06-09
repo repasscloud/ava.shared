@@ -10,6 +10,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     // Kernel
     public DbSet<AvaAIAppJwtToken> AvaAIAppJwtTokens { get; set; }
     public DbSet<StorageEntry> StorageEntries { get; set; }
+    public DbSet<VersionInfo> VersionInfos { get; set; }
 
     // Imported from Ava.API
     public DbSet<AmadeusOAuthToken> AmadeusOAuthTokens { get; set; }
