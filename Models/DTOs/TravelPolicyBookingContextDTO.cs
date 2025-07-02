@@ -4,6 +4,7 @@ public class TravelPolicyBookingContextDTO
 {
     public string? Id { get; set; }
     public string? PolicyName { get; set; }
+    public int? AvaClientId { get; set; }
     public string? AvaClientName { get; set; }
     public string? Currency { get; set; }
     public int? MaxFlightPrice { get; set; }
