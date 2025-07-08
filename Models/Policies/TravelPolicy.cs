@@ -27,10 +27,10 @@ public class TravelPolicy
     [CabinTypeValidation]
     [DefaultValue("ECONOMY")]
     public string MaxFlightSeating { get; set; } = "ECONOMY";
-    
+
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? IncludedAirlineCodes { get; set; }
-    
+
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? ExcludedAirlineCodes { get; set; }
 
@@ -71,4 +71,7 @@ public class TravelPolicy
     // If a broader selection is made (e.g. enabling APAC),
     // you can exclude specific countries via this collection.
     public ICollection<TravelPolicyDisabledCountry> DisabledCountries { get; set; } = new List<TravelPolicyDisabledCountry>();
+
+    // allowed returned results (default 20)
+    public int MaxResults { get; set; } = 20;
 }
