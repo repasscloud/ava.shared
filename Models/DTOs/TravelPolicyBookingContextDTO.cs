@@ -18,11 +18,9 @@ public class TravelPolicyBookingContextDTO
     public required string CabinClassCoverage { get; set; } = "MOST_SEGMENTS";
     public bool NonStopFlight { get; set; } = false;
 
-    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [RegularExpression(@"^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$", ErrorMessage = "Time must be in the format hh:mm.")]
     public string? FlightBookingTimeAvailableFrom { get; set; }
 
-    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [RegularExpression(@"^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$", ErrorMessage = "Time must be in the format hh:mm.")]
     public string? FlightBookingTimeAvailableTo { get; set; }
     public bool EnableSaturdayFlightBookings { get; set; } = false;
