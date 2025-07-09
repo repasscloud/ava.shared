@@ -55,6 +55,10 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<Country> Countries { get; set; }
     public DbSet<TravelPolicyDisabledCountry> TravelPolicyDisabledCountries { get; set; }
 
+    public DbSet<SupportedTravelRegion> SupportedTravelRegions { get; set; }
+    public DbSet<SupportedTravelContinent> SupportedTravelContinents { get; set; }
+    public DbSet<SupportedTravelCountry> SupportedTravelCountries { get; set; }
+
     // Travel Search Record (issue-56)
     public DbSet<TravelSearchRecord> TravelSearchRecords { get; set; }
 
