@@ -44,12 +44,12 @@ public class TravelPolicy
 
     // times for bookings (business rules)
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [RegularExpression(@"^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$", ErrorMessage = "Time must be in the format hh:mm:ss.")]
-    public string? FlightBookingTimeAvailableFrom { get; set; }  // Local time. hh:mm:ss format, e.g 10:30:00
+    [RegularExpression(@"^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$", ErrorMessage = "Time must be in the format hh:mm.")]
+    public string? FlightBookingTimeAvailableFrom { get; set; }  // Local time. hh:mm format, e.g 10:30
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [RegularExpression(@"^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$", ErrorMessage = "Time must be in the format hh:mm:ss.")]
-    public string? FlightBookingTimeAvailableTo { get; set; }  // Local time. hh:mm:ss format, e.g 10:30:00
+    [RegularExpression(@"^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$", ErrorMessage = "Time must be in the format hh:mm.")]
+    public string? FlightBookingTimeAvailableTo { get; set; }  // Local time. hh:mm format, e.g 10:30
 
     [DefaultValue(false)]
     public bool EnableSaturdayFlightBookings { get; set; } = false;
